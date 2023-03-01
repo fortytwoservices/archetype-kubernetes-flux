@@ -8,6 +8,14 @@ variable "location" {
   type        = string
 }
 
+variable "azure_network" {
+  description = "The network settings used for the vnet and subnet."
+  type = object({
+    vnet_cidr   = list(string)
+    subnet_cidr = list(string)
+  })
+}
+
 variable "node_pools" {
   description = "This object is used to define the default and additional node pools."
   type = object({
