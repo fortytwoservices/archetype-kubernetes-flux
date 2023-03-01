@@ -21,7 +21,7 @@ resource "azurerm_subnet" "aks" {
 module "aks" {
   source              = "amestofortytwo/aks/azurerm"
   version             = "1.1.0"
-  name                = format("aks-%s", var.environment_name)
+  name                = var.environment_name
   resource_group_name = azurerm_resource_group.cluster.name
   location            = azurerm_resource_group.cluster.location
   tags                = var.tags
