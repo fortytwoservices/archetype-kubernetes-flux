@@ -1,9 +1,5 @@
 {
   "[terraform]": {
     "editor.formatOnSave": true
-<<<<<<< HEAD
   }
-=======
-  },
->>>>>>> 25afd48 (perf: terraform auto format)
 }

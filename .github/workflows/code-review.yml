@@ -1,0 +1,33 @@
+---
+name: Code Review
+
+# yamllint disable-line rule:truthy
+on:
+  pull_request:
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Lint code base
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v.3.5.3
+        with:
+          fetch-depth: 0
+
+      - name: Lint Code Base
+        uses: github/super-linter@45fc0d88288beee4701c62761281edfee85655d7 # v5.0.0
+        env:
+          VALIDATE_ALL_CODEBASE: false
+          DEFAULT_BRANCH: main
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VALIDATE_GITHUB_ACTIONS: true
+          VALIDATE_MARKDOWN: true
+          VALIDATE_TERRAFORM_TFLINT: true
+          VALIDATE_YAML: true
+          ERROR_ON_MISSING_EXEC_BIT: true
