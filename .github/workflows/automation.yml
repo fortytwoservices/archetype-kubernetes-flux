@@ -13,15 +13,15 @@ permissions:
   contents: read    
 
 jobs:
-  project:
-    if: github.event_name == 'issues' || github.event_name == 'pull_request'
-    name: Add to project
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/add-to-project@0609a2702eefb44781da00f8e04901d6e5cd2b92 # v0.6.0
-        with:
-          project-url: https://github.com/orgs/amestofortytwo/projects/2
-          github-token: ${{ secrets.MARVIN_PAT }}
+  # project:
+  #   if: github.event_name == 'issues' || github.event_name == 'pull_request'
+  #   name: Add to project
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/add-to-project@0609a2702eefb44781da00f8e04901d6e5cd2b92 # v0.6.0
+  #       with:
+  #         project-url: https://github.com/orgs/amestofortytwo/projects/2
+  #         github-token: ${{ secrets.MARVIN_PAT }}
 
   terraform:
     if: github.event_name == 'push' || github.event_name == 'pull_request'
