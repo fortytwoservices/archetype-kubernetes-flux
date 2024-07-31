@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.1](https://github.com/fortytwoservices/archetype-kubernetes-flux/compare/v0.1.0...v0.1.1) (2024-07-31)
+
+
+### Bug Fixes
+
+* naming convention ([8707acf](https://github.com/fortytwoservices/archetype-kubernetes-flux/commit/8707acf3603d0dcf51240deba4b8919a3f78cd57))
+
 ## 0.1.0 (2023-03-01)
 
 
