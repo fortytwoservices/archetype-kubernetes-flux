@@ -20,7 +20,7 @@ resource "azurerm_subnet" "aks" {
 
 module "aks" {
   source              = "amestofortytwo/aks/azurerm"
-  version             = "3.7.2"
+  version             = "3.8.0"
   name                = var.environment_name
   resource_group_name = azurerm_resource_group.cluster.name
   location            = azurerm_resource_group.cluster.location
